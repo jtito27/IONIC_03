@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      GeoData
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Continente:
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Selecione:</ion-label>
+        <ion-select [(ngModel)]="continent">
+          <ion-option value="{{All}}" selected>Todos</ion-option>
+          <ion-option value="{{continent.name}}" *ngFor="let continent of continents">{{continent.name}}</ion-option>>
+        </ion-select>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button full color="dark" (click)="searchCountry(continent)">Buscar</button>
+</ion-content>
